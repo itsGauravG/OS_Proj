@@ -72,16 +72,27 @@ public class MainNew {
                 }
             }
 
+            System.out.println("M[5][0] "+ M[5][0]);
+            System.out.println("M[5][1] "+ M[5][1]);
+            System.out.println("M[5][2] "+ M[5][2]);
+            System.out.println("M[5][3] "+ M[5][3]);
+            System.out.println("M[4][0] "+ M[4][0]);
+
+
 
 
             for(int i=a;i<100;i++){
 
                 for(int j=0;j<4;j++){
 
-                    fw.write(M[i][j]);
+                    fw.append(M[i][j]);
 
                 }
             }
+
+
+
+
             fw.flush();
             fw.close();
 
@@ -345,6 +356,7 @@ public class MainNew {
                     int k5 = Character.getNumericValue(IR[3]);
 
                     a = k4*10 + k5;
+                    System.out.println("a is "+a);
 
                     System.out.println("put data");
                     SI = 2;
@@ -495,10 +507,23 @@ public class MainNew {
                     System.out.println("IR[2]: "+ IR[2]);
                     System.out.println("IR[3]: "+ IR[3]);
 
-                    exit(0);
+//                    exit(0);
 //            SI = 3;
 //            MOS();
-//            break;
+//clear main memo
+
+                    for (int i = 0; i < M.length; i++) {
+                        for (int j = 0; j < 4; j++) {
+                            M[i][j] = '\0';
+                        }
+                    }
+
+
+                    //clear buffer
+                    for (int i = 0; i < 40; i++) {
+                        buffer[i] = '\0';
+                    }
+            break;
                 }
             }
 
@@ -583,7 +608,15 @@ public class MainNew {
                 execute();
 
 
-            } else {
+            }
+            else if (buffer[0] == '$' && buffer[1] == 'E' && buffer[2] == 'N' && buffer[3] == 'D'){
+                System.out.println("inside end \n");
+
+
+            }
+
+
+            else {
                 System.out.println("inside else");
 
 
